@@ -13,6 +13,9 @@ app.use(express.json())
 
 
 app.use("/api",router)
+app.get("/api/test", (req, res) => {
+    res.send('la aplicacion esta funcionando')
+})
 
 dbconnect().then(() => {
    
