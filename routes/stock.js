@@ -63,7 +63,7 @@ router.delete("/stock/:id", async (req,res) => {
 })
 
 //-----------endpoints de negocio 
-router.put('/api/stock/actualizar-stock', async (req, res) => {
+router.put('/producto/stock/actualizar-stock', async (req, res) => {
     try {
       const productos = req.body
       if (!Array.isArray(productos) || productos.length === 0) {
