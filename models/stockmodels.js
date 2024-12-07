@@ -8,7 +8,9 @@ const productoSchema = new mongoose.Schema({
     precio: { type: Number, required: true },
     cantidad: { type: Number, required: true },
     categoria: { type: String },
-    fechaIngreso: { type: Date, default: Date.now }
+    fechaIngreso: {   type: Date, 
+      default: Date.now,
+      required: true  }
   });
 
   

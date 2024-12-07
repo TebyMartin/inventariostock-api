@@ -99,11 +99,11 @@ router.put('/producto/stock/actualizar-stock', async (req, res) => {
     }
 });
 
-router.get('/api/stock/busqueda', async (req, res) => {
-    const {  categoria } = req.query
+router.get('/producto/stock/busqueda', async (req, res) => {
+    const {  nombre } = req.query
     try {
         const querry = {} 
-        if (categoria) querry.categoria = categoria
+        if (nombre) querry.nombre = nombre
         const stock = await ModelStock.find(querry)
         if (!stock.length) {
             return res.status(404).send({mensaje:'no se encontro stocks con los filtros proporcionados'})
@@ -114,7 +114,7 @@ router.get('/api/stock/busqueda', async (req, res) => {
     }
 })
 
-router.get('/api/stock/bajo-stock', async (req, res) => {
+router.get('/producto/stock/bajo-stock', async (req, res) => {
     const minimoStock = 10; 
     try {
         const productosBajoStock = await ModelStock.find({ cantidad: { $lt: minimoStock } });
